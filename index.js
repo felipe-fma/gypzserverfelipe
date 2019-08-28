@@ -16,6 +16,6 @@ servidor.del('/', (req, res) => {
   res.send('Ae! Servidor criado veio com resposta para o path /.')
 })
 
-servidor.listen(porta, () => {
-  
+servidor.listen(process.env.PORT || porta, () => {
+
 })
