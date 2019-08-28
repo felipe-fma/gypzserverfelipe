@@ -17,6 +17,5 @@ servidor.del('/', (req, res) => {
 })
 
 servidor.listen(porta, () => {
-  console.log(`Servidor de pé em http://localhost:${porta}`)
-  console.log('Pra derrubar o servidor: ctrl + c')
+  
 })
