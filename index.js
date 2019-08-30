@@ -45,7 +45,7 @@ servidor.post('/', (req, res) =>
   if(lErr)
     database.insert(nome, limite, renda, (erro, row) => {
       if(erro == undefined)
-        res.send(`Limite concedido de ${limite}`);
+        res.send(`Limite concedido de ${limite} para o cliente ${nome}`);
       else 
         res.send(`Deu erro ${erro}`)
     });
