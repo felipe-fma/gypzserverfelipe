@@ -16,18 +16,6 @@ servidor.get('/', (req, res) =>
   database.getAll(s);
 })
 
-servidor.get('/:id', (req, res) => 
-{
-  var id = req.params.id
-
-  var call = function(row)
-  {
-    res.send(row);
-  }
-
-  database.get(id, call);
-})
-
 servidor.post('/', (req, res) => 
 {
   const { nome, renda } = req.body;  
