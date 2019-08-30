@@ -2,10 +2,7 @@ const restify = require('restify')
 var database = require('./Model/database')
 var porta = 8081
 
-var servidor = restify.createServer({
-    name: 'Hello World!',
-    version: '1.0.0'
-});
+var servidor = restify.createServer();
 
 servidor.use(restify.plugins.queryParser({ mapParams: true }));
 servidor.use(restify.plugins.bodyParser({ mapParams: true }));
@@ -13,10 +10,22 @@ servidor.use(restify.plugins.acceptParser(servidor.acceptable));
 
 servidor.get('/', (req, res) => 
 {
-  var s = function(row){
+  var call = function(row){
     res.send(row);
   }
   database.getAll(s);
+})
+
+servidor.get('/:id', (req, res) => 
+{
+  var id = req.params.id
+
+  var call = function(row)
+  {
+    res.send(row);
+  }
+
+  database.get(id, call);
 })
 
 servidor.post('/', (req, res) => 
