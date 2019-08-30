@@ -13,7 +13,19 @@ servidor.get('/', (req, res) =>
   var call = function(row){
     res.send(row);
   }
-  database.getAll(s);
+  database.getAll(call);
+})
+
+servidor.get('/:id', (req, res) => 
+{
+  var id = req.params.id
+
+  var call = function(row)
+  {
+    res.send(row);
+  }
+
+  database.get(id, call);
 })
 
 servidor.post('/', (req, res) => 
