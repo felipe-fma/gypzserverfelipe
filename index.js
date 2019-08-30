@@ -20,7 +20,7 @@ servidor.get('/:id', (req, res) =>
 {
   var id = req.params.id
 
-  var call = function(row)
+  var call = function(err, row)
   {
     res.send(row);
   }
