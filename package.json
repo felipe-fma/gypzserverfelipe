@@ -10,7 +10,10 @@
   "author": "felipe",
   "license": "ISC",
   "dependencies": {
+    "JSON": "^1.0.0",
+    "nodemon": "^1.19.1",
     "package.json": "^2.0.1",
-    "restify": "^8.4.0"
+    "restify": "^8.4.0",
+    "sqlite3": "^4.1.0"
   }
 }
