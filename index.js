@@ -8,23 +8,18 @@ servidor.use(restify.plugins.queryParser({ mapParams: true }));
 servidor.use(restify.plugins.bodyParser({ mapParams: true }));
 servidor.use(restify.plugins.acceptParser(servidor.acceptable));
 
+var call = function(row){
+  res.send(row);
+}
+
 servidor.get('/', (req, res) => 
 {
-  var call = function(row){
-    res.send(row);
-  }
   database.getAll(call);
 })
 
 servidor.get('/:id', (req, res) => 
 {
   var id = req.params.id
-
-  var call = function(err, row)
-  {
-    res.send(row);
-  }
-
   database.get(id, call);
 })
 

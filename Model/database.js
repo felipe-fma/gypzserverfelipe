@@ -20,7 +20,7 @@ module.exports =
 
     get(id, call)
     {
-        db.all(`SELECT * FROM CARTOES WHERE id = ${id}`, (err, row) => call(err, row) ); 
+        db.all(`SELECT * FROM CARTOES WHERE id = ${id}`, (err, row) => call(row) ); 
     },
 
     del(id, call)
